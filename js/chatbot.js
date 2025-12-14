@@ -6,7 +6,7 @@
 const GEMINI_API_KEY = 'AIzaSyAv6_ZwbO-t0Li9XweSqyHWayyUj62PSXQ'; // Your Gemini API key
 
 // Gemini AI Configuration
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
 
 // System prompt for health assistant
 const SYSTEM_PROMPT = {
