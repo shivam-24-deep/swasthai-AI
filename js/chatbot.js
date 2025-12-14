@@ -199,20 +199,14 @@ function hideTypingIndicator() {
 function getBotResponse(userMessage) {
     const currentLang = localStorage.getItem('preferredLanguage') || 'hi';
 
-    // Check if API key is configured
-    if (GEMINI_API_KEY && GEMINI_API_KEY !== 'YOUR_GEMINI_API_KEY_HERE') {
-        // Try AI response (works after deployment)
-        getAIResponse(userMessage, currentLang);
-    } else {
-        // Use smart fallback responses (works locally without API)
-        const fallbackResponse = getFallbackResponse(userMessage, currentLang);
+    // Use smart fallback responses (no API needed!)
+    const fallbackResponse = getFallbackResponse(userMessage, currentLang);
 
-        // Show fallback response
-        setTimeout(() => {
-            hideTypingIndicator();
-            addMessage('bot', fallbackResponse);
-        }, 1000);
-    }
+    // Show fallback response
+    setTimeout(() => {
+        hideTypingIndicator();
+        addMessage('bot', fallbackResponse);
+    }, 1000);
 }
 
 // Get response from Gemini AI
