@@ -1,12 +1,7 @@
-// AI Chatbot for Swasthai AI with Google Gemini AI Integration
-// Intelligent health conversation assistant
+// AI Chatbot for Swasthai AI - Smart Fallback System
+// Comprehensive health conversation assistant (No API needed!)
 
-// FREE GEMINI AI API KEY (No credit card needed!)
-// Get your own free key at: https://makersuite.google.com/app/apikey
-const GEMINI_API_KEY = 'AIzaSyAv6_ZwbO-t0Li9XweSqyHWayyUj62PSXQ'; // Your Gemini API key
-
-// Gemini AI Configuration
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent';
+// No API key needed - Using smart knowledge base!
 
 // System prompt for health assistant
 const SYSTEM_PROMPT = {
@@ -49,8 +44,8 @@ const chatbotKnowledge = {
         hi: ['नमस्ते', 'हेलो', 'हाय', 'हाई', 'प्रणाम', 'सुप्रभात', 'शुभ दिन'],
         en: ['hello', 'hi', 'hey', 'namaste', 'good morning', 'good afternoon', 'good evening'],
         responses: {
-            hi: 'नमस्ते! मैं स्वास्थ AI हूं। 🤖\n\nमैं Google Gemini AI से powered हूं और आपकी स्वास्थ्य से जुड़ी बातों में मदद कर सकता हूं।\n\nआप मुझसे क्या पूछना चाहते हैं?',
-            en: 'Hello! I am Swasthai AI. 🤖\n\nI am powered by Google Gemini AI and can help you with health-related questions.\n\nWhat would you like to ask?'
+            hi: 'नमस्ते! मैं स्वास्थ AI हूं। 🤖\n\nमैं आपकी स्वास्थ्य से जुड़ी बातों में मदद कर सकता हूं।\n\nआप मुझसे क्या पूछना चाहते हैं?',
+            en: 'Hello! I am Swasthai AI. 🤖\n\nI can help you with health-related questions.\n\nWhat would you like to ask?'
         }
     },
 
