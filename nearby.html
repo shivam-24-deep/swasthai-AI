@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Find nearby hospitals, clinics, pharmacies, dental centers - Check open/closed status and get directions">
+    <meta name="keywords" content="nearby hospital, pharmacy, dental, clinic, open now, healthcare services">
+    <title>Nearby Healthcare Services - Swasthai AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="setLanguage('hi')" id="langHi" class="lang-btn active">हिंदी</button>
+        <button onclick="setLanguage('en')" id="langEn" class="lang-btn">English</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p class="lang-hi">सबके लिए स्वास्थ्य सहायता</p>
+                        <p class="lang-en" style="display: none;">Health Help for Everyone</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="index.html">
+                                <span class="lang-hi">होम</span>
+                                <span class="lang-en" style="display: none;">Home</span>
+                            </a></li>
+                        <li><a href="tips.html">
+                                <span class="lang-hi">स्वास्थ्य टिप्स</span>
+                                <span class="lang-en" style="display: none;">Health Tips</span>
+                            </a></li>
+                        <li><a href="problems.html">
+                                <span class="lang-hi">आम समस्याएं</span>
+                                <span class="lang-en" style="display: none;">Common Problems</span>
+                            </a></li>
+                        <li><a href="nearby.html" class="active">
+                                <span class="lang-hi">नज़दीकी सेवाएं</span>
+                                <span class="lang-en" style="display: none;">Nearby Services</span>
+                            </a></li>
+                        <li><a href="ask.html">
+                                <span class="lang-hi">पूछें</span>
+                                <span class="lang-en" style="display: none;">Ask</span>
+                            </a></li>
+                        <li><a href="emergency.html">
+                                <span class="lang-hi">आपातकाल</span>
+                                <span class="lang-en" style="display: none;">Emergency</span>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="lang-hi">नज़दीकी स्वास्थ्य सेवाएं</h1>
+            <h1 class="lang-en" style="display: none;">Nearby Healthcare Services</h1>
+            <p class="lang-hi">अपने आसपास के अस्पताल, दवाखाना, डेंटल क्लिनिक खोजें</p>
+            <p class="lang-en" style="display: none;">Find hospitals, pharmacies, dental clinics near you</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Location Permission -->
+            <section class="card" style="border-left-color: #007bff; text-align: center;">
+                <span class="card-icon" style="font-size: 3rem;">📍</span>
+                <h3 class="lang-hi">अपनी लोकेशन शेयर करें</h3>
+                <h3 class="lang-en" style="display: none;">Share Your Location</h3>
+                <p class="lang-hi">
+                    नज़दीकी स्वास्थ्य सेवाओं को खोजने के लिए अपनी लोकेशन शेयर करें।<br>
+                    हम आपकी लोकेशन को सेव नहीं करते।
+                </p>
+                <p class="lang-en" style="display: none;">
+                    Share your location to find nearby healthcare services.<br>
+                    We do not save your location.
+                </p>
+                <button onclick="getLocation()" class="btn btn-large" style="margin-top: 1rem;">
+                    <span class="lang-hi">📍 मेरी लोकेशन खोजें</span>
+                    <span class="lang-en" style="display: none;">📍 Find My Location</span>
+                </button>
+                <div id="locationStatus" style="margin-top: 1rem; font-weight: 600;"></div>
+            </section>
+
+            <!-- Service Type Selection -->
+            <section>
+                <h2 style="text-align: center; color: #28a745; margin-bottom: 2rem;">
+                    <span class="lang-hi">आप क्या खोज रहे हैं?</span>
+                    <span class="lang-en" style="display: none;">What are you looking for?</span>
+                </h2>
+
+                <div class="big-buttons">
+                    <button onclick="searchNearby('hospital')" class="big-btn"
+                        style="cursor: pointer; border: none; width: 100%;">
+                        <div class="big-btn-icon">🏥</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">अस्पताल / Hospital</h3>
+                            <h3 class="lang-en" style="display: none;">Hospital</h3>
+                            <p class="lang-hi">सरकारी और निजी अस्पताल</p>
+                            <p class="lang-en" style="display: none;">Government and private hospitals</p>
+                        </div>
+                    </button>
+
+                    <button onclick="searchNearby('pharmacy')" class="big-btn"
+                        style="cursor: pointer; border: none; width: 100%;">
+                        <div class="big-btn-icon">💊</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">दवाखाना / Pharmacy</h3>
+                            <h3 class="lang-en" style="display: none;">Pharmacy</h3>
+                            <p class="lang-hi">मेडिकल स्टोर और दवाखाना</p>
+                            <p class="lang-en" style="display: none;">Medical stores and pharmacies</p>
+                        </div>
+                    </button>
+
+                    <button onclick="searchNearby('dentist')" class="big-btn"
+                        style="cursor: pointer; border: none; width: 100%;">
+                        <div class="big-btn-icon">🦷</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">डेंटल क्लिनिक / Dental</h3>
+                            <h3 class="lang-en" style="display: none;">Dental Clinic</h3>
+                            <p class="lang-hi">दांतों के डॉक्टर</p>
+                            <p class="lang-en" style="display: none;">Dentists and dental clinics</p>
+                        </div>
+                    </button>
+
+                    <button onclick="searchNearby('doctor')" class="big-btn"
+                        style="cursor: pointer; border: none; width: 100%;">
+                        <div class="big-btn-icon">👨‍⚕️</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">डॉक्टर क्लिनिक / Doctor</h3>
+                            <h3 class="lang-en" style="display: none;">Doctor Clinic</h3>
+                            <p class="lang-hi">प्राइवेट डॉक्टर क्लिनिक</p>
+                            <p class="lang-en" style="display: none;">Private doctor clinics</p>
+                        </div>
+                    </button>
+
+                    <button onclick="searchNearby('health')" class="big-btn"
+                        style="cursor: pointer; border: none; width: 100%;">
+                        <div class="big-btn-icon">🏥</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">स्वास्थ्य केंद्र / Health Center</h3>
+                            <h3 class="lang-en" style="display: none;">Health Center</h3>
+                            <p class="lang-hi">PHC, CHC, आंगनवाड़ी</p>
+                            <p class="lang-en" style="display: none;">PHC, CHC, Community Health</p>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" style="display: none;">
+                <h2 style="text-align: center; color: #007bff; margin-bottom: 2rem;">
+                    <span class="lang-hi">नज़दीकी परिणाम</span>
+                    <span class="lang-en" style="display: none;">Nearby Results</span>
+                </h2>
+                <div id="results" class="cards"></div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="info-box">
+                <h4 class="lang-hi">📱 यह कैसे काम करता है</h4>
+                <h4 class="lang-en" style="display: none;">📱 How It Works</h4>
+                <ol style="padding-left: 1.5rem;" class="lang-hi">
+                    <li style="padding: 0.4rem 0;">अपनी लोकेशन शेयर करें</li>
+                    <li style="padding: 0.4rem 0;">जो सेवा चाहिए वो चुनें (अस्पताल, दवाखाना, आदि)</li>
+                    <li style="padding: 0.4rem 0;">नज़दीकी जगहों की लिस्ट देखें</li>
+                    <li style="padding: 0.4rem 0;">खुला/बंद स्टेटस देखें</li>
+                    <li style="padding: 0.4rem 0;">दिशा-निर्देश पाने के लिए क्लिक करें</li>
+                </ol>
+                <ol style="padding-left: 1.5rem; display: none;" class="lang-en">
+                    <li style="padding: 0.4rem 0;">Share your location</li>
+                    <li style="padding: 0.4rem 0;">Choose the service you need (hospital, pharmacy, etc.)</li>
+                    <li style="padding: 0.4rem 0;">See list of nearby places</li>
+                    <li style="padding: 0.4rem 0;">Check open/closed status</li>
+                    <li style="padding: 0.4rem 0;">Click to get directions</li>
+                </ol>
+            </section>
+
+            <!-- Privacy Notice -->
+            <section class="warning-box">
+                <h4 class="lang-hi">🔒 गोपनीयता</h4>
+                <h4 class="lang-en" style="display: none;">🔒 Privacy</h4>
+                <p class="lang-hi">
+                    <strong>हम आपकी लोकेशन को सेव नहीं करते।</strong><br>
+                    आपकी लोकेशन केवल नज़दीकी सेवाओं को खोजने के लिए इस्तेमाल होती है।<br>
+                    हम कोई भी डेटा स्टोर नहीं करते।
+                </p>
+                <p class="lang-en" style="display: none;">
+                    <strong>We do not save your location.</strong><br>
+                    Your location is only used to find nearby services.<br>
+                    We do not store any data.
+                </p>
+            </section>
+
+            <!-- Important Note -->
+            <section class="alert-box">
+                <h4 class="lang-hi">⚠️ महत्वपूर्ण नोट</h4>
+                <h4 class="lang-en" style="display: none;">⚠️ Important Note</h4>
+                <p class="lang-hi">
+                    <strong>जाने से पहले फोन करके पुष्टि करें।</strong><br>
+                    खुलने/बंद होने का समय बदल सकता है।<br>
+                    आपातकाल में, सीधे 108 पर कॉल करें।
+                </p>
+                <p class="lang-en" style="display: none;">
+                    <strong>Call to confirm before visiting.</strong><br>
+                    Opening/closing times may change.<br>
+                    In emergency, call 108 directly.
+                </p>
+            </section>
+
+            <!-- Manual Search Option -->
+            <section class="card" style="border-left-color: #ffc107;">
+                <span class="card-icon">🔍</span>
+                <h3 class="lang-hi">मैन्युअल सर्च</h3>
+                <h3 class="lang-en" style="display: none;">Manual Search</h3>
+                <p class="lang-hi">
+                    अगर लोकेशन शेयर नहीं करना चाहते, तो Google Maps पर सर्च करें:
+                </p>
+                <p class="lang-en" style="display: none;">
+                    If you don't want to share location, search on Google Maps:
+                </p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.google.com/maps/search/hospital+near+me" target="_blank" class="btn">
+                        <span class="lang-hi">🏥 अस्पताल खोजें</span>
+                        <span class="lang-en" style="display: none;">🏥 Find Hospital</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/pharmacy+near+me" target="_blank" class="btn">
+                        <span class="lang-hi">💊 दवाखाना खोजें</span>
+                        <span class="lang-en" style="display: none;">💊 Find Pharmacy</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">
+                    <span class="lang-hi">होम</span>
+                    <span class="lang-en" style="display: none;">Home</span>
+                </a>
+                <a href="tips.html">
+                    <span class="lang-hi">स्वास्थ्य टिप्स</span>
+                    <span class="lang-en" style="display: none;">Health Tips</span>
+                </a>
+                <a href="problems.html">
+                    <span class="lang-hi">आम समस्याएं</span>
+                    <span class="lang-en" style="display: none;">Common Problems</span>
+                </a>
+                <a href="nearby.html">
+                    <span class="lang-hi">नज़दीकी सेवाएं</span>
+                    <span class="lang-en" style="display: none;">Nearby Services</span>
+                </a>
+                <a href="ask.html">
+                    <span class="lang-hi">पूछें</span>
+                    <span class="lang-en" style="display: none;">Ask</span>
+                </a>
+                <a href="emergency.html">
+                    <span class="lang-hi">आपातकाल</span>
+                    <span class="lang-en" style="display: none;">Emergency</span>
+                </a>
+                <a href="about.html">
+                    <span class="lang-hi">हमारे बारे में</span>
+                    <span class="lang-en" style="display: none;">About</span>
+                </a>
+            </div>
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+            <p class="lang-hi">सरल जागरूकता के माध्यम से स्वास्थ्य को सशक्त बनाना</p>
+            <p class="lang-en" style="display: none;">Empowering health through simple awareness</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/nearby.js"></script>
+</body>
+
+</html>

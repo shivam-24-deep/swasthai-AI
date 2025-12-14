@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Swasthai AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-message {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin: 1rem 0;
+        }
+
+        .error-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode" id="darkModeToggle">
+        🌙
+    </button>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="setLanguage('hi')" id="langHi" class="lang-btn active">हिंदी</button>
+        <button onclick="setLanguage('en')" id="langEn" class="lang-btn">English</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p class="lang-hi">सबके लिए स्वास्थ्य सहायता</p>
+                        <p class="lang-en" style="display: none;">Health Help for Everyone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Error Content -->
+    <main>
+        <div class="container">
+            <div class="error-container">
+                <h1 class="error-code">404</h1>
+                <h2 class="error-message lang-hi">पेज नहीं मिला</h2>
+                <h2 class="error-message lang-en" style="display: none;">Page Not Found</h2>
+                <p class="error-description lang-hi">
+                    क्षमा करें, आप जो पेज ढूंढ रहे हैं वह मौजूद नहीं है या हटा दिया गया है।
+                </p>
+                <p class="error-description lang-en" style="display: none;">
+                    Sorry, the page you are looking for does not exist or has been removed.
+                </p>
+                <div class="error-actions">
+                    <a href="index.html" class="btn btn-large">
+                        <span class="lang-hi">🏠 होम पर जाएं</span>
+                        <span class="lang-en" style="display: none;">🏠 Go to Home</span>
+                    </a>
+                    <a href="javascript:history.back()" class="btn btn-large btn-blue">
+                        <span class="lang-hi">⬅️ वापस जाएं</span>
+                        <span class="lang-en" style="display: none;">⬅️ Go Back</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

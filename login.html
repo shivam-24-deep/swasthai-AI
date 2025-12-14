@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login or Sign up for Swasthai AI - Your personal health assistant">
+    <title>Login - Swasthai AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            max-width: 450px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            background: var(--light-bg);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .auth-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-light);
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--white);
+            color: var(--text-dark);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .google-btn:hover {
+            background: var(--light-bg);
+            border-color: var(--primary-green);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .forgot-password a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message {
+            background: var(--light-green);
+            color: var(--dark-green);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode" id="darkModeToggle">
+        🌙
+    </button>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="setLanguage('hi')" id="langHi" class="lang-btn active">हिंदी</button>
+        <button onclick="setLanguage('en')" id="langEn" class="lang-btn">English</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p class="lang-hi">सबके लिए स्वास्थ्य सहायता</p>
+                        <p class="lang-en" style="display: none;">Health Help for Everyone</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="index.html" class="btn">
+                        <span class="lang-hi">होम पर जाएं</span>
+                        <span class="lang-en" style="display: none;">Go to Home</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="auth-container">
+                <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem;">
+                    <span class="lang-hi">स्वागत है!</span>
+                    <span class="lang-en" style="display: none;">Welcome!</span>
+                </h2>
+
+                <!-- Error/Success Messages -->
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <div class="auth-tab active" onclick="showTab('login')">
+                        <span class="lang-hi">लॉगिन</span>
+                        <span class="lang-en" style="display: none;">Login</span>
+                    </div>
+                    <div class="auth-tab" onclick="showTab('signup')">
+                        <span class="lang-hi">साइन अप</span>
+                        <span class="lang-en" style="display: none;">Sign Up</span>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="auth-form active">
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="lang-hi">ईमेल</label>
+                            <label class="lang-en" style="display: none;">Email</label>
+                            <input type="email" id="loginEmail" required placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="lang-hi">पासवर्ड</label>
+                            <label class="lang-en" style="display: none;">Password</label>
+                            <input type="password" id="loginPassword" required placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <span class="lang-hi">लॉगिन करें</span>
+                            <span class="lang-en" style="display: none;">Login</span>
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span class="lang-hi">या</span>
+                        <span class="lang-en" style="display: none;">OR</span>
+                    </div>
+
+                    <button class="google-btn" onclick="handleGoogleLogin()">
+                        <span>🔵</span>
+                        <span class="lang-hi">Google से लॉगिन करें</span>
+                        <span class="lang-en" style="display: none;">Login with Google</span>
+                    </button>
+
+                    <div class="forgot-password">
+                        <a href="#" onclick="handleForgotPassword()">
+                            <span class="lang-hi">पासवर्ड भूल गए?</span>
+                            <span class="lang-en" style="display: none;">Forgot Password?</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" class="auth-form">
+                    <form onsubmit="handleSignup(event)">
+                        <div class="form-group">
+                            <label class="lang-hi">नाम</label>
+                            <label class="lang-en" style="display: none;">Name</label>
+                            <input type="text" id="signupName" required placeholder="आपका नाम / Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="lang-hi">ईमेल</label>
+                            <label class="lang-en" style="display: none;">Email</label>
+                            <input type="email" id="signupEmail" required placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="lang-hi">पासवर्ड (कम से कम 6 अक्षर)</label>
+                            <label class="lang-en" style="display: none;">Password (at least 6 characters)</label>
+                            <input type="password" id="signupPassword" required minlength="6" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="auth-btn">
+                            <span class="lang-hi">साइन अप करें</span>
+                            <span class="lang-en" style="display: none;">Sign Up</span>
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span class="lang-hi">या</span>
+                        <span class="lang-en" style="display: none;">OR</span>
+                    </div>
+
+                    <button class="google-btn" onclick="handleGoogleLogin()">
+                        <span>🔵</span>
+                        <span class="lang-hi">Google से साइन अप करें</span>
+                        <span class="lang-en" style="display: none;">Sign Up with Google</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+            <p class="lang-hi">सरल जागरूकता के माध्यम से स्वास्थ्य को सशक्त बनाना</p>
+            <p class="lang-en" style="display: none;">Empowering health through simple awareness</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/firebase-auth.js"></script>
+
+    <script>
+        // Show tab
+        function showTab(tab) {
+            const tabs = document.querySelectorAll('.auth-tab');
+            const forms = document.querySelectorAll('.auth-form');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            forms.forEach(f => f.classList.remove('active'));
+
+            if (tab === 'login') {
+                tabs[0].classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+                document.getElementById('signupForm').classList.add('active');
+            }
+
+            hideMessages();
+        }
+
+        // Handle login
+        async function handleLogin(event) {
+            event.preventDefault();
+            hideMessages();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const result = await loginWithEmail(email, password);
+
+            if (result.success) {
+                showSuccess('लॉगिन सफल! / Login successful!');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                showError(result.error);
+            }
+        }
+
+        // Handle signup
+        async function handleSignup(event) {
+            event.preventDefault();
+            hideMessages();
+
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            const result = await signUpWithEmail(email, password, name);
+
+            if (result.success) {
+                showSuccess('साइन अप सफल! कृपया अपना ईमेल वेरिफाई करें। / Sign up successful! Please verify your email.');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                showError(result.error);
+            }
+        }
+
+        // Handle Google login
+        async function handleGoogleLogin() {
+            hideMessages();
+
+            const result = await loginWithGoogle();
+
+            if (result.success) {
+                showSuccess('Google लॉगिन सफल! / Google login successful!');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                showError(result.error);
+            }
+        }
+
+        // Handle forgot password
+        async function handleForgotPassword() {
+            const email = prompt('अपना ईमेल दर्ज करें / Enter your email:');
+
+            if (email) {
+                const result = await resetPassword(email);
+
+                if (result.success) {
+                    showSuccess('पासवर्ड रीसेट ईमेल भेजा गया! / Password reset email sent!');
+                } else {
+                    showError(result.error);
+                }
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+        }
+
+        // Hide messages
+        function hideMessages() {
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

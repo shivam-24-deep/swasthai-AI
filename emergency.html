@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Emergency health help - Ambulance numbers, emergency signs, what to do in serious health situations">
+    <meta name="keywords" content="emergency, ambulance, 108, 102, health emergency, Hindi, English">
+    <title>Emergency Help - Swasthai AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p>सबके लिए स्वास्थ्य सहायता</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tips.html">Health Tips</a></li>
+                        <li><a href="problems.html">Common Problems</a></li>
+                        <li><a href="ask.html">Ask Swasthai</a></li>
+                        <li><a href="emergency.html" class="active">Emergency</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Red Alert -->
+    <section class="hero" style="background: linear-gradient(135deg, #f8d7da, #f5c6cb);">
+        <div class="container">
+            <h1 style="color: #721c24;">🚨 Emergency Help</h1>
+            <h2 style="font-size: 1.5rem; color: #721c24;">आपातकालीन मदद</h2>
+            <p style="color: #721c24; font-weight: 600;">For serious health problems - Do not wait!<br>
+                गंभीर स्वास्थ्य समस्याओं के लिए - इंतज़ार न करें!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Emergency Numbers -->
+            <section>
+                <h2 style="text-align: center; color: #dc3545; margin-bottom: 2rem;">
+                    Emergency Numbers | आपातकालीन नंबर
+                </h2>
+
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <h3>🚑 Ambulance</h3>
+                        <p><a href="tel:108">108</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Free ambulance service<br>मुफ्त एम्बुलेंस सेवा
+                        </p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>🏥 Health Helpline</h3>
+                        <p><a href="tel:102">102</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Health emergency<br>स्वास्थ्य आपातकाल</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>🚓 Police</h3>
+                        <p><a href="tel:100">100</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Police emergency<br>पुलिस आपातकाल</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>🆘 Women Helpline</h3>
+                        <p><a href="tel:1091">1091</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Women in distress<br>महिला हेल्पलाइन</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>🧠 Mental Health</h3>
+                        <p><a href="tel:9152987821">9152987821</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Suicide prevention<br>आत्महत्या रोकथाम</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h3>👶 Child Helpline</h3>
+                        <p><a href="tel:1098">1098</a></p>
+                        <p style="font-size: 1rem; margin-top: 0.5rem;">Children in need<br>बच्चों की मदद</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- When to Call Emergency -->
+            <section class="alert-box">
+                <h4>🚨 Call Emergency Immediately If | तुरंत आपातकालीन नंबर पर कॉल करें अगर</h4>
+                <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>💔 Chest Pain</strong> - Severe pain in chest, arm, or jaw<br>
+                        सीने, बांह या जबड़े में तेज़ दर्द
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>😮‍💨 Breathing Problem</strong> - Severe difficulty breathing<br>
+                        सांस लेने में बहुत तकलीफ
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>😵 Unconscious</strong> - Person not responding or unconscious<br>
+                        व्यक्ति बेहोश है या जवाब नहीं दे रहा
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>🩸 Heavy Bleeding</strong> - Bleeding that won't stop<br>
+                        खून बहना जो रुक नहीं रहा
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>🤕 Head Injury</strong> - Serious head or spine injury<br>
+                        गंभीर सिर या रीढ़ की चोट
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>🔥 Severe Burns</strong> - Large or deep burns<br>
+                        बड़ी या गहरी जलन
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>☠️ Poisoning</strong> - Swallowed poison or harmful substance<br>
+                        ज़हर या हानिकारक पदार्थ निगल लिया
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>🗣️ Cannot Speak</strong> - Sudden difficulty speaking or understanding<br>
+                        अचानक बोलने या समझने में तकलीफ
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(114, 28, 36, 0.2);">
+                        <strong>😖 Severe Pain</strong> - Unbearable pain anywhere in body<br>
+                        शरीर में कहीं भी असहनीय दर्द
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <strong>🤰 Pregnancy Emergency</strong> - Severe pain or bleeding during pregnancy<br>
+                        गर्भावस्था में तेज़ दर्द या खून बहना
+                    </li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-size: 1.3rem; text-align: center;">
+                    <strong>⚠️ DO NOT WAIT! CALL 108 IMMEDIATELY!</strong><br>
+                    इंतज़ार न करें! तुरंत 108 पर कॉल करें!
+                </p>
+            </section>
+
+            <!-- What to Do While Waiting -->
+            <section class="problem-card">
+                <h3>⏰ While Waiting for Ambulance | एम्बुलेंस का इंतज़ार करते समय</h3>
+
+                <div class="problem-section">
+                    <h4>✓ Do These | यह करें</h4>
+                    <ul>
+                        <li>Stay calm | शांत रहें</li>
+                        <li>Keep the person comfortable | व्यक्ति को आराम से रखें</li>
+                        <li>Don't give food or water if unconscious | बेहोश हो तो खाना या पानी न दें</li>
+                        <li>Keep airway clear | सांस का रास्ता साफ रखें</li>
+                        <li>Stop bleeding with clean cloth | साफ कपड़े से खून रोकें</li>
+                        <li>Don't move if spine injury suspected | रीढ़ की चोट हो सकती है तो न हिलाएं</li>
+                        <li>Note down what happened | क्या हुआ याद रखें</li>
+                        <li>Collect medicines if any | दवाइयां हों तो साथ रखें</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>❌ Do NOT Do These | यह न करें</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.3rem 0;">❌ Don't panic | घबराएं नहीं</li>
+                        <li style="padding: 0.3rem 0;">❌ Don't give medicines without doctor | डॉक्टर के बिना दवा न दें
+                        </li>
+                        <li style="padding: 0.3rem 0;">❌ Don't move injured person unnecessarily | ज़रूरत न हो तो घायल
+                            को न हिलाएं</li>
+                        <li style="padding: 0.3rem 0;">❌ Don't waste time | समय बर्बाद न करें</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Heart Attack Warning Signs -->
+            <section class="alert-box">
+                <h4>💔 Heart Attack Warning Signs | दिल का दौरा के संकेत</h4>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                    <strong>If you see these signs, call 108 immediately!</strong><br>
+                    अगर ये संकेत दिखें, तुरंत 108 पर कॉल करें!
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.4rem 0;">• Chest pain or pressure | सीने में दर्द या दबाव</li>
+                    <li style="padding: 0.4rem 0;">• Pain in arm, jaw, neck, or back | बांह, जबड़ा, गर्दन या पीठ में
+                        दर्द</li>
+                    <li style="padding: 0.4rem 0;">• Shortness of breath | सांस फूलना</li>
+                    <li style="padding: 0.4rem 0;">• Sweating | पसीना आना</li>
+                    <li style="padding: 0.4rem 0;">• Nausea or vomiting | मतली या उल्टी</li>
+                    <li style="padding: 0.4rem 0;">• Feeling dizzy or lightheaded | चक्कर आना</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 1.2rem;">
+                    <strong>Time is critical! Every minute matters!</strong><br>
+                    समय बहुत महत्वपूर्ण है! हर मिनट मायने रखता है!
+                </p>
+            </section>
+
+            <!-- Stroke Warning Signs -->
+            <section class="alert-box">
+                <h4>🧠 Stroke Warning Signs | स्ट्रोक के संकेत</h4>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                    <strong>Remember: FAST</strong>
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;">
+                        <strong>F - Face:</strong> Face drooping on one side | चेहरा एक तरफ झुक गया
+                    </li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;">
+                        <strong>A - Arms:</strong> Cannot raise both arms | दोनों बांह नहीं उठा सकते
+                    </li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;">
+                        <strong>S - Speech:</strong> Slurred or strange speech | बोलने में तकलीफ
+                    </li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;">
+                        <strong>T - Time:</strong> Call 108 immediately! | तुरंत 108 पर कॉल करें!
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Nearest Hospital -->
+            <section class="info-box">
+                <h4>🏥 Know Your Nearest Hospital | अपने नज़दीकी अस्पताल को जानें</h4>
+                <p>
+                    <strong>Important:</strong> Know the address and phone number of the nearest hospital or health
+                    center.<br>
+                    <strong>महत्वपूर्ण:</strong> अपने नज़दीकी अस्पताल या स्वास्थ्य केंद्र का पता और फोन नंबर जानें।
+                </p>
+                <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                    <li style="padding: 0.3rem 0;">✓ Government hospital | सरकारी अस्पताल</li>
+                    <li style="padding: 0.3rem 0;">✓ Primary Health Center (PHC) | प्राथमिक स्वास्थ्य केंद्र</li>
+                    <li style="padding: 0.3rem 0;">✓ Community Health Center (CHC) | सामुदायिक स्वास्थ्य केंद्र</li>
+                    <li style="padding: 0.3rem 0;">✓ Private hospital (if needed) | निजी अस्पताल (ज़रूरत हो तो)</li>
+                </ul>
+            </section>
+
+            <!-- Important Reminder -->
+            <section class="warning-box">
+                <h4>📌 Remember | याद रखें</h4>
+                <p>
+                    <strong>In emergency, every second counts!</strong><br>
+                    आपातकाल में, हर सेकंड मायने रखता है!
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Don't try home remedies in serious situations.</strong><br>
+                    गंभीर स्थिति में घरेलू उपाय न आज़माएं।
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Call 108 and get professional help immediately.</strong><br>
+                    108 पर कॉल करें और तुरंत पेशेवर मदद लें।
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>It's better to be safe than sorry!</strong><br>
+                    सुरक्षित रहना बेहतर है!
+                </p>
+            </section>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="tel:108" class="btn btn-large btn-red" style="font-size: 1.5rem; padding: 1.5rem 3rem;">
+                    📞 Call 108 Now | अभी 108 पर कॉल करें
+                </a>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="index.html" class="btn">
+                    ← Back to Home | होम पर वापस जाएं
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="tips.html">Health Tips</a>
+                <a href="problems.html">Common Problems</a>
+                <a href="ask.html">Ask Swasthai</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="about.html">About</a>
+            </div>
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+            <p style="color: #dc3545; font-weight: 600;">Emergency: 108 (Ambulance) | 102 (Health Helpline)</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

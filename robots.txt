@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://swasthai-ai.com/sitemap.xml
+
+# Disallow backend files (when added)
+Disallow: /js/firebase-config.js
+Disallow: /js/firebase-auth.js
+Disallow: /js/firebase-db.js
+
+# Disallow documentation
+Disallow: /README.md
+Disallow: /API_KEY_GUIDE.md
+Disallow: /BACKEND_SETUP.md
+Disallow: /BACKEND_INTEGRATION.md
+Disallow: /PROJECT_SUMMARY.md
+
+# Allow important pages
+Allow: /index.html
+Allow: /tips.html
+Allow: /problems.html
+Allow: /nearby.html
+Allow: /emergency.html
+Allow: /ask.html
+Allow: /about.html
+
+# Crawl delay
+Crawl-delay: 1

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Swasthai AI - Daily health help for everyone. Simple health tips in Hindi and English for rural and urban India.">
+    <meta name="keywords" content="health tips, swasth, health awareness, India, Hindi, English">
+    <title>Swasthai AI - Daily Health Help for Everyone</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode" id="darkModeToggle">
+        🌙
+    </button>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p class="lang-hi">सबके लिए स्वास्थ्य सहायता</p>
+                        <p class="lang-en" style="display: none;">Health Help for Everyone</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="index.html" class="active">
+                                <span class="lang-hi">होम</span>
+                                <span class="lang-en" style="display: none;">Home</span>
+                            </a></li>
+                        <li><a href="tips.html">
+                                <span class="lang-hi">स्वास्थ्य टिप्स</span>
+                                <span class="lang-en" style="display: none;">Health Tips</span>
+                            </a></li>
+                        <li><a href="problems.html">
+                                <span class="lang-hi">आम समस्याएं</span>
+                                <span class="lang-en" style="display: none;">Common Problems</span>
+                            </a></li>
+                        <li><a href="nearby.html">
+                                <span class="lang-hi">नज़दीकी सेवाएं</span>
+                                <span class="lang-en" style="display: none;">Nearby Services</span>
+                            </a></li>
+                        <li><a href="ask.html">
+                                <span class="lang-hi">पूछें</span>
+                                <span class="lang-en" style="display: none;">Ask</span>
+                            </a></li>
+                        <li><a href="emergency.html">
+                                <span class="lang-hi">आपातकाल</span>
+                                <span class="lang-en" style="display: none;">Emergency</span>
+                            </a></li>
+                        <!-- Language Selector in Nav -->
+                        <li class="language-selector">
+                            <button onclick="setLanguage('hi')" id="langHi" class="lang-btn active">हिंदी</button>
+                            <button onclick="setLanguage('en')" id="langEn" class="lang-btn">English</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="lang-hi">सबके लिए रोज़ की सेहत मदद</h1>
+            <h1 class="lang-en" style="display: none;">Daily Health Help for Everyone</h1>
+            <p class="lang-hi">आसान स्वास्थ्य सलाह हिंदी में</p>
+            <p class="lang-en" style="display: none;">Simple health advice in English</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Main Action Buttons -->
+            <section>
+                <h2 style="text-align: center; color: #28a745; margin-bottom: 2rem;">
+                    <span class="lang-hi">आज आपको क्या चाहिए?</span>
+                    <span class="lang-en" style="display: none;">What do you need today?</span>
+                </h2>
+
+                <div class="big-buttons">
+                    <!-- Daily Health Tips -->
+                    <a href="tips.html" class="big-btn">
+                        <div class="big-btn-icon">💚</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">रोज़ की सेहत टिप्स</h3>
+                            <h3 class="lang-en" style="display: none;">Daily Health Tips</h3>
+                            <p class="lang-hi">स्वस्थ जीवन के लिए आसान टिप्स</p>
+                            <p class="lang-en" style="display: none;">Simple tips for healthy living</p>
+                        </div>
+                    </a>
+
+                    <!-- Common Health Problems -->
+                    <a href="problems.html" class="big-btn">
+                        <div class="big-btn-icon">🩺</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi">आम स्वास्थ्य समस्याएं</h3>
+                            <h3 class="lang-en" style="display: none;">Common Health Problems</h3>
+                            <p class="lang-hi">बुखार, सर्दी, सिरदर्द में क्या करें</p>
+                            <p class="lang-en" style="display: none;">What to do for fever, cold, headache</p>
+                        </div>
+                    </a>
+
+                    <!-- Nearby Healthcare Services -->
+                    <a href="nearby.html" class="big-btn" style="border-color: #007bff;">
+                        <div class="big-btn-icon" style="color: #007bff;">📍</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi" style="color: #007bff;">नज़दीकी स्वास्थ्य सेवाएं</h3>
+                            <h3 class="lang-en" style="display: none; color: #007bff;">Nearby Healthcare Services</h3>
+                            <p class="lang-hi">अस्पताल, दवाखाना, डेंटल खोजें</p>
+                            <p class="lang-en" style="display: none;">Find Hospitals, Pharmacy, Dental</p>
+                        </div>
+                    </a>
+
+                    <!-- Emergency Help -->
+                    <a href="emergency.html" class="big-btn" style="border-color: #dc3545;">
+                        <div class="big-btn-icon" style="color: #dc3545;">🚨</div>
+                        <div class="big-btn-content">
+                            <h3 class="lang-hi" style="color: #dc3545;">आपातकालीन मदद</h3>
+                            <h3 class="lang-en" style="display: none; color: #dc3545;">Emergency Help</h3>
+                            <p class="lang-hi">तुरंत मदद चाहिए? यहां क्लिक करें</p>
+                            <p class="lang-en" style="display: none;">Need urgent help? Click here</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Simple Disclaimer -->
+            <section class="info-box" style="margin-top: 3rem;">
+                <h4 class="lang-hi">💡 याद रखें</h4>
+                <h4 class="lang-en" style="display: none;">💡 Remember</h4>
+                <p class="lang-hi">
+                    यह वेबसाइट केवल सामान्य जानकारी देती है। गंभीर समस्या में डॉक्टर से मिलें।
+                </p>
+                <p class="lang-en" style="display: none;">
+                    This website provides general information only. See a doctor for serious problems.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- AI Chatbot Widget -->
+    <button class="chatbot-button" onclick="toggleChatbot()" title="Chat with Swasthai AI">
+        💬
+    </button>
+
+    <div id="chatbotWidget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <h3>
+                <span>🤖</span>
+                <span id="chatbotTitle">स्वास्थ AI</span>
+            </h3>
+            <div class="chatbot-controls">
+                <button onclick="clearChat()" title="Clear chat">🗑️</button>
+                <button onclick="closeChatbot()" title="Close">✕</button>
+            </div>
+        </div>
+
+        <div id="chatMessages" class="chatbot-messages"></div>
+
+        <div class="chatbot-input">
+            <div class="quick-responses" id="quickResponses">
+                <button class="quick-response-btn" onclick="sendQuickResponse('बुखार')">बुखार</button>
+                <button class="quick-response-btn" onclick="sendQuickResponse('सिरदर्द')">सिरदर्द</button>
+                <button class="quick-response-btn" onclick="sendQuickResponse('स्वास्थ्य टिप्स')">टिप्स</button>
+            </div>
+            <div class="chat-input-group">
+                <input type="text" id="chatInput" placeholder="अपना सवाल यहां लिखें..."
+                    onkeypress="handleChatKeyPress(event)">
+                <button class="chat-send-btn" onclick="sendMessage()" title="Send">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">
+                    <span class="lang-hi">होम</span>
+                    <span class="lang-en" style="display: none;">Home</span>
+                </a>
+                <a href="tips.html">
+                    <span class="lang-hi">स्वास्थ्य टिप्स</span>
+                    <span class="lang-en" style="display: none;">Health Tips</span>
+                </a>
+                <a href="problems.html">
+                    <span class="lang-hi">आम समस्याएं</span>
+                    <span class="lang-en" style="display: none;">Common Problems</span>
+                </a>
+                <a href="nearby.html">
+                    <span class="lang-hi">नज़दीकी सेवाएं</span>
+                    <span class="lang-en" style="display: none;">Nearby Services</span>
+                </a>
+                <a href="ask.html">
+                    <span class="lang-hi">पूछें</span>
+                    <span class="lang-en" style="display: none;">Ask</span>
+                </a>
+                <a href="emergency.html">
+                    <span class="lang-hi">आपातकाल</span>
+                    <span class="lang-en" style="display: none;">Emergency</span>
+                </a>
+                <a href="about.html">
+                    <span class="lang-hi">हमारे बारे में</span>
+                    <span class="lang-en" style="display: none;">About</span>
+                </a>
+            </div>
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+            <p class="lang-hi">सरल जागरूकता के माध्यम से स्वास्थ्य को सशक्त बनाना</p>
+            <p class="lang-en" style="display: none;">Empowering health through simple awareness</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">
+                <span class="lang-hi">आपातकाल: 108 (एम्बुलेंस) | 102 (स्वास्थ्य हेल्पलाइन)</span>
+                <span class="lang-en" style="display: none;">Emergency: 108 (Ambulance) | 102 (Health Helpline)</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

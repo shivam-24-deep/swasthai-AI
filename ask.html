@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ask Swasthai - Interactive health guidance helper with step-by-step questions">
+    <meta name="keywords" content="health guidance, interactive helper, health questions, Hindi, English">
+    <title>Ask Swasthai - Interactive Health Helper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🏥</span>
+                    <div class="logo-text">
+                        <h1>Swasthai AI</h1>
+                        <p>सबके लिए स्वास्थ्य सहायता</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tips.html">Health Tips</a></li>
+                        <li><a href="problems.html">Common Problems</a></li>
+                        <li><a href="ask.html" class="active">Ask Swasthai</a></li>
+                        <li><a href="emergency.html">Emergency</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Ask Swasthai</h1>
+            <h2 style="font-size: 1.5rem; color: #28a745;">स्वास्थ AI से पूछें</h2>
+            <p>Simple health guidance in a few steps<br>
+                कुछ आसान सवालों में स्वास्थ्य मार्गदर्शन</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Important Disclaimer -->
+            <section class="warning-box" style="max-width: 700px; margin: 0 auto 2rem;">
+                <h4>⚠️ Important | महत्वपूर्ण</h4>
+                <p>
+                    <strong>This is NOT a doctor. This does not replace medical advice.</strong><br>
+                    यह डॉक्टर नहीं है। यह चिकित्सा सलाह की जगह नहीं ले सकता।
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>For any serious problem, see a doctor immediately.</strong><br>
+                    किसी भी गंभीर समस्या के लिए, तुरंत डॉक्टर से मिलें।
+                </p>
+            </section>
+
+            <!-- Interactive Helper -->
+            <div class="ask-container">
+                <!-- Step 1: What's the problem? -->
+                <div id="step1" class="question-step">
+                    <h3>What is the problem? | समस्या क्या है?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectOption(1, 'fever', 2)">
+                            🌡️ Fever | बुखार
+                        </button>
+                        <button class="option-btn" onclick="selectOption(1, 'cold', 2)">
+                            🤧 Cold & Cough | सर्दी और खांसी
+                        </button>
+                        <button class="option-btn" onclick="selectOption(1, 'headache', 2)">
+                            🤕 Headache | सिरदर्द
+                        </button>
+                        <button class="option-btn" onclick="selectOption(1, 'stomach', 2)">
+                            🤰 Stomach Pain | पेट दर्द
+                        </button>
+                        <button class="option-btn" onclick="selectOption(1, 'stress', 2)">
+                            😰 Stress/Anxiety | तनाव/चिंता
+                        </button>
+                        <button class="option-btn" onclick="selectOption(1, 'other', 2)">
+                            🩺 Other Problem | अन्य समस्या
+                        </button>
+                    </div>
+                    <div id="response1" class="response-box">
+                        <h4>Good! Let's understand more...</h4>
+                        <p>अच्छा! आइए और समझते हैं...</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: How long? -->
+                <div id="step2" class="question-step">
+                    <h3>How long have you had this problem? | यह समस्या कब से है?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectOption(2, 'today', 3)">
+                            Today only | आज ही शुरू हुई
+                        </button>
+                        <button class="option-btn" onclick="selectOption(2, '1-2days', 3)">
+                            1-2 days | 1-2 दिन
+                        </button>
+                        <button class="option-btn" onclick="selectOption(2, '3-7days', 3)">
+                            3-7 days | 3-7 दिन
+                        </button>
+                        <button class="option-btn" onclick="selectOption(2, 'more', 3)">
+                            More than a week | एक हफ्ते से ज़्यादा
+                        </button>
+                    </div>
+                    <div id="response2" class="response-box">
+                        <h4>Thank you! One more question...</h4>
+                        <p>धन्यवाद! एक और सवाल...</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: How severe? -->
+                <div id="step3" class="question-step">
+                    <h3>How severe is the problem? | समस्या कितनी गंभीर है?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectOption(3, 'mild', 4)">
+                            Mild - Can do daily work | हल्की - रोज़ का काम कर सकते हैं
+                        </button>
+                        <button class="option-btn" onclick="selectOption(3, 'moderate', 4)">
+                            Moderate - Some difficulty | मध्यम - कुछ तकलीफ है
+                        </button>
+                        <button class="option-btn" onclick="selectOption(3, 'severe', 4)">
+                            Severe - Cannot do work | गंभीर - काम नहीं कर सकते
+                        </button>
+                    </div>
+                    <div id="response3" class="response-box">
+                        <h4>Got it! Here's what you should do...</h4>
+                        <p>समझ गए! यह करें...</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Final Advice -->
+                <div id="step4" class="question-step">
+                    <h3>Here's what you should do | यह करें</h3>
+
+                    <div class="info-box">
+                        <h4>💚 Home Care | घरेलू देखभाल</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.4rem 0;">✓ Rest well | अच्छे से आराम करें</li>
+                            <li style="padding: 0.4rem 0;">✓ Drink lots of water | खूब पानी पिएं</li>
+                            <li style="padding: 0.4rem 0;">✓ Eat light, healthy food | हल्का, स्वस्थ खाना खाएं</li>
+                            <li style="padding: 0.4rem 0;">✓ Avoid stress | तनाव से बचें</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box" style="margin-top: 1.5rem;">
+                        <h4>⚠️ Watch for these signs | इन संकेतों पर ध्यान दें</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.3rem 0;">• Problem getting worse | समस्या बढ़ रही है</li>
+                            <li style="padding: 0.3rem 0;">• Not getting better in 2-3 days | 2-3 दिन में ठीक नहीं हो
+                                रहा</li>
+                            <li style="padding: 0.3rem 0;">• New symptoms appearing | नए लक्षण दिख रहे हैं</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box" style="margin-top: 1.5rem;">
+                        <h4>🏥 See a Doctor If | डॉक्टर से मिलें अगर</h4>
+                        <p>
+                            <strong>• Problem is severe | समस्या गंभीर है</strong><br>
+                            <strong>• Not improving with home care | घरेलू देखभाल से ठीक नहीं हो रहा</strong><br>
+                            <strong>• You are worried | आप चिंतित हैं</strong>
+                        </p>
+                        <p style="margin-top: 1rem; font-size: 1.2rem;">
+                            <strong>When in doubt, always see a doctor!</strong><br>
+                            संदेह हो तो हमेशा डॉक्टर से मिलें!
+                        </p>
+                    </div>
+
+                    <div
+                        style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="restartHelper()" class="btn btn-blue">
+                            Ask Again | फिर से पूछें
+                        </button>
+                        <a href="problems.html" class="btn">
+                            See Common Problems | आम समस्याएं देखें
+                        </a>
+                        <a href="emergency.html" class="btn btn-red">
+                            Emergency Help | आपातकालीन मदद
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <section style="margin-top: 3rem;">
+                <h2 style="text-align: center; color: #007bff; margin-bottom: 2rem;">
+                    More Help | और मदद
+                </h2>
+
+                <div class="cards">
+                    <div class="card">
+                        <span class="card-icon">📖</span>
+                        <h3>Health Tips</h3>
+                        <p>Daily health tips for healthy living<br>
+                            स्वस्थ जीवन के लिए रोज़ की टिप्स</p>
+                        <a href="tips.html" class="btn" style="margin-top: 1rem; display: inline-block;">
+                            Read Tips | टिप्स पढ़ें
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <span class="card-icon">🩺</span>
+                        <h3>Common Problems</h3>
+                        <p>Solutions for common health issues<br>
+                            आम स्वास्थ्य समस्याओं के समाधान</p>
+                        <a href="problems.html" class="btn" style="margin-top: 1rem; display: inline-block;">
+                            See Problems | समस्याएं देखें
+                        </a>
+                    </div>
+
+                    <div class="card" style="border-left-color: #dc3545;">
+                        <span class="card-icon" style="color: #dc3545;">🚨</span>
+                        <h3 style="color: #dc3545;">Emergency</h3>
+                        <p>For serious health emergencies<br>
+                            गंभीर स्वास्थ्य आपात स्थिति के लिए</p>
+                        <a href="emergency.html" class="btn btn-red" style="margin-top: 1rem; display: inline-block;">
+                            Emergency Help | आपातकालीन मदद
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Reminder -->
+            <section class="info-box" style="margin-top: 2rem;">
+                <h4>📌 Remember | याद रखें</h4>
+                <p>
+                    <strong>This helper gives general guidance only.</strong><br>
+                    यह हेल्पर केवल सामान्य मार्गदर्शन देता है।
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Every person is different. What works for one may not work for another.</strong><br>
+                    हर व्यक्ति अलग है। जो एक के लिए काम करे वो दूसरे के लिए नहीं भी कर सकता।
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>Always trust your doctor's advice over this website.</strong><br>
+                    हमेशा इस वेबसाइट से ज़्यादा अपने डॉक्टर की सलाह पर भरोसा करें।
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="tips.html">Health Tips</a>
+                <a href="problems.html">Common Problems</a>
+                <a href="ask.html">Ask Swasthai</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="about.html">About</a>
+            </div>
+            <p>&copy; 2025 Swasthai AI. All rights reserved.</p>
+            <p>Empowering health through simple awareness | सरल जागरूकता के माध्यम से स्वास्थ्य को सशक्त बनाना</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
