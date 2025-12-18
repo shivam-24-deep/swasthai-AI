@@ -9,6 +9,7 @@
     <meta name="keywords" content="fever, cold, headache, stomach pain, home remedies, Hindi, English">
     <title>Common Health Problems - Swasthai AI</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
 </head>
 
 <body>
@@ -306,7 +307,27 @@
     </footer>
 
     <!-- JavaScript -->
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- Simple Chatbot Widget -->
+    <div id="chatWidget" style="display: none;">
+        <div id="chatHeader">
+            <span class="lang-hi">स्वास्थ AI सहायक</span>
+            <span class="lang-en" style="display: none;">Swasthai AI</span>
+            <button onclick="toggleChatbot()">×</button>
+        </div>
+        <div id="chatMessages"></div>
+        <div id="chatInput">
+            <input type="text" id="chatInputField" placeholder="अपना सवाल लिखें..." />
+            <button onclick="sendMessage()">📤</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button id="chatToggle" onclick="toggleChatbot()">💬</button>
+
 </body>
 
 </html>

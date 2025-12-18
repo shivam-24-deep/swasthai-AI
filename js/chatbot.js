@@ -104,7 +104,7 @@ function toggleChatbot() {
 }
 
 function sendMessage() {
-    const input = document.getElementById('chatInput');
+    const input = document.getElementById('chatInputField');
     const message = input.value.trim();
 
     if (!message) return;
@@ -163,11 +163,15 @@ function initChatbot() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    const chatInput = document.getElementById('chatInput');
+    const chatInput = document.getElementById('chatInputField');
     if (chatInput) {
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
         });
+    }
+
+    const widget = document.getElementById('chatWidget');
+    if (widget) {
         initChatbot();
     }
 });
