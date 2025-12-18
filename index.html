@@ -148,40 +148,7 @@
         </div>
     </main>
 
-    <!-- AI Chatbot Widget -->
-    <button class="chatbot-button" onclick="toggleChatbot()" title="Chat with Swasthai AI">
-        💬
-    </button>
 
-    <div id="chatbotWidget" class="chatbot-widget">
-        <div class="chatbot-header">
-            <h3>
-                <span>🤖</span>
-                <span id="chatbotTitle">स्वास्थ AI</span>
-            </h3>
-            <div class="chatbot-controls">
-                <button onclick="clearChat()" title="Clear chat">🗑️</button>
-                <button onclick="closeChatbot()" title="Close">✕</button>
-            </div>
-        </div>
-
-        <div id="chatMessages" class="chatbot-messages"></div>
-
-        <div class="chatbot-input">
-            <div class="quick-responses" id="quickResponses">
-                <button class="quick-response-btn" onclick="sendQuickResponse('बुखार')">बुखार</button>
-                <button class="quick-response-btn" onclick="sendQuickResponse('सिरदर्द')">सिरदर्द</button>
-                <button class="quick-response-btn" onclick="sendQuickResponse('स्वास्थ्य टिप्स')">टिप्स</button>
-            </div>
-            <div class="chat-input-group">
-                <input type="text" id="chatInput" placeholder="अपना सवाल यहां लिखें..."
-                    onkeypress="handleChatKeyPress(event)">
-                <button class="chat-send-btn" onclick="sendMessage()" title="Send">
-                    ➤
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
